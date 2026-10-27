@@ -62,8 +62,6 @@ function calcularMC145152(crystal, vco, prescaler, ra) {
 // ==========================================
 // EJECUCIÓN Y SALIDA
 // ==========================================
-// const resultado = calcularMC145152(fCrystal, fVco, P, raPins);
-// console.log(JSON.stringify(resultado, null, 2));
 
 function calcular(){
 	raPins.RA0 = $("#dip_RA0").checked ? 0 : 1;
@@ -77,7 +75,11 @@ function calcular(){
 	fCrystal = parseFloat($("#inp_cristal").value);
 	
 	const resultado = calcularMC145152(fCrystal, fVco, P, raPins);
-	console.log(JSON.stringify(resultado, null, 2));
+
+	if(resultado.error !== null){
+		alert(resultado.error);
+		return;
+	}
 	
 	for(let i = 0; i < 10; i++){
 		$("#dip_" + $("#inp_N" + i).value).checked = resultado.contadorN.pines_N0_a_N9[i] ? false : true;
