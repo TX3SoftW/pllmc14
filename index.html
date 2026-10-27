@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de MC145152P2</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="copyright" content="© 2026 TX3, SoftW.">
+	<link rel="stylesheet" href="app.css">
+	<script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+<h1>Calculadora para el PLL MC145152P2</h1>
+<h3>Configurar pines y dip switch</h3>
+<div class="integrado">
+	<div class="pines">
+		<div class="izq">
+			<div class="pin">
+				<span>1</span>
+				<span>f<sub>in</sub></span>
+			</div>
+			<div class="pin">
+				<span>2</span>
+				<span>V<sub>SS</sub></span>
+			</div>
+			<div class="pin">
+				<span>3</span>
+				<span>V<sub>DD</sub></span>
+			</div>
+			<div class="pin">
+				<span>4</span>
+				<span>RA0</span>
+			</div>
+			<div class="pin">
+				<span>5</span>
+				<span>RA1</span>
+			</div>
+			<div class="pin">
+				<span>6</span>
+				<span>RA2</span>
+			</div>
+			<div class="pin">
+				<span>7</span>
+				<span>φ<sub>R</sub></span>
+			</div>
+			<div class="pin">
+				<span>8</span>
+				<span>φ<sub>V</sub></span>
+			</div>
+			<div class="pin">
+				<span>9</span>
+				<span>MC</span>
+			</div>
+			<div class="pin">
+				<span>10</span>
+				<span>A5
+				<input id="inp_A5" type="number" min="1" max="16" step="1" value="1" /></span>
+			</div>
+			<div class="pin">
+				<span>11</span>
+				<span>N0
+				<input id="inp_N0" type="number" min="1" max="16" step="1" value="2" /></span>
+			</div>
+			<div class="pin">
+				<span>12</span>
+				<span>N1
+				<input id="inp_N1" type="number" min="1" max="16" step="1" value="3" /></span>
+			</div>
+			<div class="pin">
+				<span>13</span>
+				<span>N2
+				<input id="inp_N2" type="number" min="1" max="16" step="1" value="4" /></span>
+			</div>
+			<div class="pin">
+				<span>14</span>
+				<span>N3
+				<input id="inp_N3" type="number" min="1" max="16" step="1" value="5" /></span>
+			</div>
+		</div>
+		<div class="der">
+			<div class="pin">
+				<span>LD</span>
+				<span>28</span>
+			</div>
+			<div class="pin">
+				<span>OSC<sub>in</sub></span>
+				<span>27</span>
+			</div>
+			<div class="pin">
+				<span>OSC<sub>out</sub></span>
+				<span>26</span>
+			</div>
+			<div class="pin">
+				<span>
+				<input id="inp_A4" type="number" min="1" max="16" step="1" value="16" />A4</span>
+				<span>25</span>
+			</div>
+			<div class="pin">
+				<span>
+				<input id="inp_A3" type="number" min="1" max="16" step="1" value="15" />A3</span>
+				<span>24</span>
+			</div>
+			<div class="pin">
+				<span>
+				<input id="inp_A0" type="number" min="1" max="16" step="1" value="12" />A0</span>
+				<span>23</span>
+			</div>
+			<div class="pin">
+				<span>
+				<input id="inp_A2" type="number" min="1" max="16" step="1" value="14" />A2</span>
+				<span>22</span>
+			</div>
+			<div class="pin">
+				<span>
+				<input id="inp_A1" type="number" min="1" max="16" step="1" value="13" />A1</span>
+				<span>21</span>
+			</div>
+			<div class="pin">
+				<span>
+				<input id="inp_N9" type="number" min="1" max="16" step="1" value="11" />N9</span>
+				<span>20</span>
+			</div>
+			<div class="pin">
+				<span>
+				<input id="inp_N8" type="number" min="1" max="16" step="1" value="10" />N8</span>
+				<span>19</span>
+			</div>
+			<div class="pin">
+				<span>
+				<input id="inp_N7" type="number" min="1" max="16" step="1" value="9" />N7</span>
+				<span>18</span>
+			</div>
+			<div class="pin">
+				<span>
+				<input id="inp_N6" type="number" min="1" max="16" step="1" value="8" />N6</span>
+				<span>17</span>
+			</div>
+			<div class="pin">
+				<span>
+				<input id="inp_N5" type="number" min="1" max="16" step="1" value="7" />N5</span>
+				<span>16</span>
+			</div>
+			<div class="pin">
+				<span>
+				<input id="inp_N4" type="number" min="1" max="16" step="1" value="6" />N4</span>
+				<span>15</span>
+			</div>
+		</div>
+	</div>
+	<div class="silicio"></div>
+</div>
+
+<div class="final">
+	<div class="calculadora">
+		<div>
+			<h3>Dirección</h3>
+			<div class="dipswitch">
+				<h4>MASA</h4>
+				<div class="dip">
+					<span class="num">RA0</span>
+					<label class="switch">
+						<input id="dip_RA0" type="checkbox" checked>
+						<span class="slider"></span>
+					</label>
+				</div>
+				<div class="dip">
+					<span class="num">RA1</span>
+					<label class="switch">
+						<input id="dip_RA1" type="checkbox" checked>
+						<span class="slider"></span>
+					</label>
+				</div>
+				<div class="dip">
+					<span class="num">RA2</span>
+					<label class="switch">
+						<input id="dip_RA2" type="checkbox">
+						<span class="slider"></span>
+					</label>
+				</div>
+			</div>
+		</div>
+		<div>
+			<h3>Cristal</h3>
+			<label><input id="inp_cristal" type="number" min="1.0" max="100.0" step="0.01" value="10.24" /> MHz</label>
+		</div>
+		<div>
+			<h3>Prescaler</h3>
+			<label><input id="inp_pres" type="number" value="64" /></label>
+		</div>
+		<div>
+			<h3>Frecuencia</h3>
+			<label><input id="inp_freq" type="number" min="87.1" max="107.9" step="0.2" value="98.3" /> MHz</label>
+		</div>
+		<button onclick="calcular()">Calcular</button>
+	</div>
+
+	<div class="dipswitch">
+		<h4>ON</h4>
+		<div class="dip">
+			<span class="num">16</span>
+			<label class="switch">
+				<input id="dip_16" type="checkbox">
+				<span class="slider"></span>
+			</label>
+		</div>
+		<div class="dip">
+			<span class="num">15</span>
+			<label class="switch">
+				<input id="dip_15" type="checkbox">
+				<span class="slider"></span>
+			</label>
+		</div>
+		<div class="dip">
+			<span class="num">14</span>
+			<label class="switch">
+				<input id="dip_14" type="checkbox">
+				<span class="slider"></span>
+			</label>
+		</div>
+		<div class="dip">
+			<span class="num">13</span>
+			<label class="switch">
+				<input id="dip_13" type="checkbox">
+				<span class="slider"></span>
+			</label>
+		</div>
+		<div class="dip">
+			<span class="num">12</span>
+			<label class="switch">
+				<input id="dip_12" type="checkbox">
+				<span class="slider"></span>
+			</label>
+		</div>
+		<div class="dip">
+			<span class="num">11</span>
+			<label class="switch">
+				<input id="dip_11" type="checkbox">
+				<span class="slider"></span>
+			</label>
+		</div>
+		<div class="dip">
+			<span class="num">10</span>
+			<label class="switch">
+				<input id="dip_10" type="checkbox">
+				<span class="slider"></span>
+			</label>
+		</div>
+		<div class="dip">
+			<span class="num">9</span>
+			<label class="switch">
+				<input id="dip_9" type="checkbox">
+				<span class="slider"></span>
+			</label>
+		</div>
+		<div class="dip">
+			<span class="num">8</span>
+			<label class="switch">
+				<input id="dip_8" type="checkbox">
+				<span class="slider"></span>
+			</label>
+		</div>
+		<div class="dip">
+			<span class="num">7</span>
+			<label class="switch">
+				<input id="dip_7" type="checkbox">
+				<span class="slider"></span>
+			</label>
+		</div>
+		<div class="dip">
+			<span class="num">6</span>
+			<label class="switch">
+				<input id="dip_6" type="checkbox">
+				<span class="slider"></span>
+			</label>
+		</div>
+		<div class="dip">
+			<span class="num">5</span>
+			<label class="switch">
+				<input id="dip_5" type="checkbox">
+				<span class="slider"></span>
+			</label>
+		</div>
+		<div class="dip">
+			<span class="num">4</span>
+			<label class="switch">
+				<input id="dip_4" type="checkbox">
+				<span class="slider"></span>
+			</label>
+		</div>
+		<div class="dip">
+			<span class="num">3</span>
+			<label class="switch">
+				<input id="dip_3" type="checkbox">
+				<span class="slider"></span>
+			</label>
+		</div>
+		<div class="dip">
+			<span class="num">2</span>
+			<label class="switch">
+				<input id="dip_2" type="checkbox">
+				<span class="slider"></span>
+			</label>
+		</div>
+		<div class="dip">
+			<span class="num">1</span>
+			<label class="switch">
+				<input id="dip_1" type="checkbox">
+				<span class="slider"></span>
+			</label>
+		</div>
+	</div>
+</div>
+		
+
+<div class="pie">Creado por <a href="">TX3, SoftW.</a>. © 2026</div>
+</body>
+</html>
